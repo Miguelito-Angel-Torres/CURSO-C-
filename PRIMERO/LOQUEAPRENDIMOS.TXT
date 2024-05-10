@@ -1,0 +1,12 @@
+Lo que Aprendimos: Ayer y Hoy dia 
+    - Tipos de variables
+    - Que es una variables
+    - Las variables constantes
+    - Separaciones de string con variables
+    - Funcion Main()
+    - Que es una biblioteca
+    - Inicializar variables
+
+    - Arrays
+
+    

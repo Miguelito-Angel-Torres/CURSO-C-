@@ -6,10 +6,11 @@
 using namespace std; 
         // main(): siempre va ser la funcion principal en caso que varias funciones
         // {} indica que todo adentro se va ejecutar
-        // () parentesis se usan para colocar parametros es opcional 
+        // () parentesis se usan para colocar parametros is es opcional 
 
 // Indicar la funcion que vamos usar en el main()
 void  tipos_variables();
+void  declaracion_variables_constantes();
 
 int main(){
     // cout es una herramienta para colocar en consola
@@ -17,6 +18,7 @@ int main(){
     cout << "Seguir a Tom Angel" << endl;
     cout << "Un mensaje me ayudaria bastante" << endl;
     tipos_variables();
+    declaracion_variables_constantes();
     return 0;
 }
 /* Hay funciones que devuelve valores : todo la funcion llamado VOID no devuelve valor y no contiene void devuelve un valor*/   
@@ -56,9 +58,10 @@ void tipos_variables(){
     sueldo1 = 5000;
     sueldo = 8000;
 
+    cout << "===================================================" << endl;
     cout << sueldo << endl;
     cout << sueldo1 << endl;
-}
+};
 /*3: -------------------- DECLARACIONES E INICIALIZACION DE VARIABLES--------------------------------------------------------------*/
 /* 
     ------ DECLARACION DE VARIABLES -- (REGLAS)
@@ -88,5 +91,71 @@ void tipos_variables(){
         // Otra forma
         int z(5)  <------------------------ Inicializacion de constructor                            -- Mas se trabaja con clases
         int z{5} <-------------------------- Inicializacion de lista                                  -- narrowing
+
 */
-/**************cxxxxx*/
+/*4. Constantes : El contenido de la variable no se cambia */
+/*  TIPOS DE CONSTANTES:
+      - Constantes literales:    \n \t  \b  etc
+      - Constantes declaradas:   Palabra reservadas const
+      - Expresiones constantes:  Palabra reservadas constexpr
+      - Constantes enumeradas:   Palabra reservada enum
+      - Constantes definidas:    Directiva #define(obsoleto)     # Ejemplo: (Ya no se declara asi: ) #define int precio = 50;
+*/
+void declaracion_variables_constantes(){
+    // OJO LA EJECUCION VA DE ARRIBA HACIA ABAJO
+    cout << "=======================================================" << endl;
+     /*Se va pedir el salario de un empleado en tiempo de ejecucion*/
+    // --------------------------Declaracion----------------------------
+    // Nombre del Empleado debe ser una constante(Porque no va cambiar): El constante mas se usa en id,nombres,numero de certificado,etc.
+    const string nombre_em = "TomAngel";
+    // Edad del empleado:
+    int edad_em{21};
+    // El salario del empleado, no esta inicializado mas adelante.
+    double salario_em;
+
+    // ---------------------Cuerpo-------------------------------------------
+    // Pedir el salario por consola.
+    cout << "Introduce el salario del empleado: ";
+    // En tiempo de ejecucion nos va pedir el salario del empleado
+    cin >> salario_em;
+    // En tiempo de ejecucion nos va pedir la edad del empleado
+    cout << "Introduce la edad del empleado: ";
+    cin >> edad_em;
+
+    // ----------------------- Salida -----------------------------------
+    // Para ver los datos:
+    cout << "---------------------------------------------------------" << endl;
+    cout << "Datos del empleado " <<endl;
+    cout << "Nombre:" << nombre_em << " . Edad: " << edad_em << " . Salario " << salario_em;
+
+};
+
+// --------------------------------------  ARRAYS(ARREGLOS) ------------------------------------------------------------------
+/* 
+    - QUE ES : Estructura de datos que contiene una coleccion de valores del 
+               mismo tipo, los valores del array son fijos.
+    - ¿PARA QUE?
+        Para almacenar valores que normalmente tiene alguna relacion entre si.
+    - SINTAXIS:
+       -- Declaracion: 
+                int mi_matriz[n]  -->  int array_entero[5]{40,50,30,20,10};
+
+                // Inicializamos la variable array
+                    const float array_decimal{8}
+
+                    float mi_matriz[array_decimal]{1.2,1.3,1.5,1.6,1.8,1.5,2.8,8.2}
+
+                // Array no especificados:
+                    int array_entero[]{15,24,45,........... infinito}
+                  
+      -- Acceso y Almacenamiento de valores(INDICE).
+            int mi_matriz[6]{1,2,3,4,5,6}
+            mi_matriz[0] = 1
+            mi_matriz[1] = 2
+            mi_matriz[2] = 3
+            mi_matriz[3] = 4
+            mi_matriz[4] = 5
+            mi_matriz[5] = 6
+ */
+// DECLARACIONES  DE ARRAYS:
+
