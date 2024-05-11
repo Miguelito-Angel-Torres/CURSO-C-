@@ -11,14 +11,22 @@ using namespace std;
 // Indicar la funcion que vamos usar en el main()
 void  tipos_variables();
 void  declaracion_variables_constantes();
+void  arrays();
+void arraysdimensionales();
 
 int main(){
     // cout es una herramienta para colocar en consola
     // endl es una funcion de la biblioteca <iostream> que va realizar un salto de linea
     cout << "Seguir a Tom Angel" << endl;
     cout << "Un mensaje me ayudaria bastante" << endl;
-    tipos_variables();
-    declaracion_variables_constantes();
+
+    //tipos_variables();
+    
+    //declaracion_variables_constantes();
+    
+    //arrays();
+    
+    arraysdimensionales();
     return 0;
 }
 /* Hay funciones que devuelve valores : todo la funcion llamado VOID no devuelve valor y no contiene void devuelve un valor*/   
@@ -159,3 +167,62 @@ void declaracion_variables_constantes(){
  */
 // DECLARACIONES  DE ARRAYS:
 
+void arrays(){
+    // Inicializar arrays muchas formas diferentes
+    int matrix[] {10,20,30,40,50,60,70,80,90,100};
+    
+    cout << matrix[0] << endl;
+    cout << matrix[1] << endl;
+    cout << matrix[2] << endl;
+
+    // Si no hay elemento el valor del array es cero
+    // Inicializacion
+    const int personas{10};
+
+    int edades[personas]{15,20,30};
+
+    cout << edades[1] << endl;
+    cout << edades[3] << endl;
+
+    // Almacenar el valor en una posicion:
+
+    edades[3] = 40;
+
+    cout << edades[3] << endl;
+
+    // Como cambiar valor de una posicion
+
+    edades[1] = 100;
+
+    cout << edades[1] << endl;
+
+    // Pedir por consola para almacenar el valor en un indice
+
+    cout << "Colocando el valor en la posicion 1: " ;
+    cin >> edades[1];
+
+    cout << edades[1] << endl;
+
+};
+/* -------------------------------Arrays dimensionales --------------------------------------------------/*
+/* 4 filas y 2 columnas*/
+/*Ejemplo:  int mi_matriz[4][2] = {10,20,30,40,50,60,70,80}
+            int mi_matriz[4][2] = {
+                                    {10,20},
+                                    {30,40},
+                                    {50,60},
+                                    {70,90}
+                                   };
+
+ */
+void arraysdimensionales(){
+    int mi_matriz[4][2] =  {
+                            10,20,
+                            30,40,
+                            50,60,
+                            70,80 };
+
+    cout << mi_matriz[0][1];
+    
+
+};
