@@ -13,7 +13,7 @@ void  tipos_variables();
 void  declaracion_variables_constantes();
 void  arrays();
 void arraysdimensionales();
-
+void vectores();
 int main(){
     // cout es una herramienta para colocar en consola
     // endl es una funcion de la biblioteca <iostream> que va realizar un salto de linea
@@ -26,7 +26,9 @@ int main(){
     
     //arrays();
     
-    arraysdimensionales();
+    //arraysdimensionales();
+
+    vectores();
     return 0;
 }
 /* Hay funciones que devuelve valores : todo la funcion llamado VOID no devuelve valor y no contiene void devuelve un valor*/   
@@ -216,13 +218,92 @@ void arrays(){
 
  */
 void arraysdimensionales(){
-    int mi_matriz[4][2] =  {
-                            10,20,
-                            30,40,
-                            50,60,
-                            70,80 };
+    // Este array dimensional contiene 4 filas con 2 columnas.
+    /*int mi_matriz[4][2] =  {
+                            10,20, // fila 0  -> columna 0  columna 1
+                            30,40, // fila 1 -> columna 0  columna 1
+                            50,60, // fila 2 -> columna 0  columna 1
+                            70,80  }; // fila 3 -> columna 0  columna 1*/
 
-    cout << mi_matriz[0][1];
+    // Recorrer el array dimensional y agregar valores:
     
+    // # Agregar valores por cada fila y columna
+    /*
+        int mi_matriz2[4][5] = {
+                                 0,0,0,0,0,
+                                 0,0,0,0,0,
+                                 0,0,0,0,0,
+                                 0,0,0,0,0,
+                                }
+    
+    */
+    int mi_matriz2[4][5];
+    // for : indica que vamos hacer recorridos.
+    // Filas
+    for(int fila=0;fila<4;fila++){
+        // Columnas
+        for(int columna=0;columna<5;columna++){
+            // cin funcion que pide valor en la consola
+            cout << "Ingrese en la fila " << fila + 1 << " en la columna " << columna + 1 << " : ";
+            cin >> mi_matriz2[fila][columna];
+        }
+    };
+    cout << "Visualizamos ahora los valores almacenados en el array" << endl;
 
+    for(int fila = 0; fila < 4; fila++){
+        for(int columna= 0; columna<5; columna++){
+            cout << mi_matriz2[fila][columna];
+        }
+        cout << endl;
+    }
 };
+/*------------------------------------------------------------------- Vectores ------------------------------------------------------*/
+/*
+    ¿ Que es un vector?
+    - Vector es una (CLASE) de la libreria Estandar de C++. Esta clase crea estructuras contenedoras para almacenar datos secuenciales.
+    (Puede varias la capacidad).
+    - Los vectores pueden crecer o decrecer en tamaño de forma dinamica.
+    - Tienen una sintaxis muy similar a los Arrays (pero no son iguales).
+    - Proporcionan multiples metodos para chequear limites , tamaños , comprobar si existe un elemnto , etc .
+    - Almacenan los valores en posiciones contiguas de la memoria y tambien en posiciones separadas accesibles a traves de punteros.
+    // Importancia:
+        - Tamaño dinamico
+        - Los elementos almacenados en su interior son del mismo tipo
+        - Se accede a los elementos almacenados con su posicion o indice
+        - El primer elemento tiene indice 0
+        - El ultimo elemento tiene indice size - 1
+        - Se suele interaccionar con ellos utilizando bucles
+*/
+// Incluyendo la biblioteca vector
+#include <vector>
+
+void vectores(){
+    // Si no se coloca valores determinado sus valores son 0
+    // Vectores libres
+
+    vector <int> numeros;
+    
+    vector <char> letras;
+    // Vectores con caracteres determinados 
+    vector <int> numeros1{10,20,30,40,50};
+    vector <char> letras1(6);
+
+    // Valor que se almacenar por defecto en los valores determinados
+    vector <double> salarios(200,2000);
+
+    // Recorrido con For, para saber que contiene un vector
+
+    // Numero:
+    for(int i = 0; i < 5; i++){
+        
+        cout << numeros1[i] << endl;
+    }
+
+    cout << "==============================================";
+
+    // Char:
+    for(int i = 0; i<6;i++){
+        cout << letras1[i] << endl;
+    }
+
+}
