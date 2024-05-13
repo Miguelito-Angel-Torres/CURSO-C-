@@ -1,3 +1,20 @@
+/*------------------------------------------------------------------- Vectores ------------------------------------------------------*/
+/*
+    ¿ Que es un vector?
+    - Vector es una (CLASE) de la libreria Estandar de C++. Esta clase crea estructuras contenedoras para almacenar datos secuenciales.
+    (Puede varias la capacidad).
+    - Los vectores pueden crecer o decrecer en tamaño de forma dinamica.
+    - Tienen una sintaxis muy similar a los Arrays (pero no son iguales).
+    - Proporcionan multiples metodos para chequear limites , tamaños , comprobar si existe un elemnto , etc .
+    - Almacenan los valores en posiciones contiguas de la memoria y tambien en posiciones separadas accesibles a traves de punteros.
+    // Importancia:
+        - Tamaño dinamico
+        - Los elementos almacenados en su interior son del mismo tipo
+        - Se accede a los elementos almacenados con su posicion o indice
+        - El primer elemento tiene indice 0
+        - El ultimo elemento tiene indice size - 1
+        - Se suele interaccionar con ellos utilizando bucles
+*/
 #include <iostream>
 using namespace std;
 #include <vector>
@@ -36,6 +53,4 @@ int main(){
         cout <<salarios[i] <<  endl;
         i = i  + 1 ;
     }
-
-    // 
 };

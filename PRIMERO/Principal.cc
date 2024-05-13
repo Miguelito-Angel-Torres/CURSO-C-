@@ -11,9 +11,7 @@ using namespace std;
 // Indicar la funcion que vamos usar en el main()
 void  tipos_variables();
 void  declaracion_variables_constantes();
-void  arrays();
-void arraysdimensionales();
-void vectores();
+
 int main(){
     // cout es una herramienta para colocar en consola
     // endl es una funcion de la biblioteca <iostream> que va realizar un salto de linea
@@ -23,17 +21,14 @@ int main(){
     //tipos_variables();
     
     //declaracion_variables_constantes();
-    
-    //arrays();
-    
-    //arraysdimensionales();
-
-    vectores();
     return 0;
 }
-/* Hay funciones que devuelve valores : todo la funcion llamado VOID no devuelve valor y no contiene void devuelve un valor*/   
+
+
+
 
 /* 2: ------------------------------ TIPOS Y VARIABLES ----------------------------------------------- */
+
 /* 4 TIPOS : CARACTERES , ENTEROS , DECIMALES , BOOLEANOS
 Unsigned: Indica que vamos usar solo numeros positivo se duplica su rango 
     ejemplo: unsigned short;
@@ -140,170 +135,3 @@ void declaracion_variables_constantes(){
 
 };
 
-// --------------------------------------  ARRAYS(ARREGLOS) ------------------------------------------------------------------
-/* 
-    - QUE ES : Estructura de datos que contiene una coleccion de valores del 
-               mismo tipo, los valores del array son fijos.
-    - ¿PARA QUE?
-        Para almacenar valores que normalmente tiene alguna relacion entre si.
-    - SINTAXIS:
-       -- Declaracion: 
-                int mi_matriz[n]  -->  int array_entero[5]{40,50,30,20,10};
-
-                // Inicializamos la variable array
-                    const float array_decimal{8}
-
-                    float mi_matriz[array_decimal]{1.2,1.3,1.5,1.6,1.8,1.5,2.8,8.2}
-
-                // Array no especificados:
-                    int array_entero[]{15,24,45,........... infinito}
-                  
-      -- Acceso y Almacenamiento de valores(INDICE).
-            int mi_matriz[6]{1,2,3,4,5,6}
-            mi_matriz[0] = 1
-            mi_matriz[1] = 2
-            mi_matriz[2] = 3
-            mi_matriz[3] = 4
-            mi_matriz[4] = 5
-            mi_matriz[5] = 6
- */
-// DECLARACIONES  DE ARRAYS:
-
-void arrays(){
-    // Inicializar arrays muchas formas diferentes
-    int matrix[] {10,20,30,40,50,60,70,80,90,100};
-    
-    cout << matrix[0] << endl;
-    cout << matrix[1] << endl;
-    cout << matrix[2] << endl;
-
-    // Si no hay elemento el valor del array es cero
-    // Inicializacion
-    const int personas{10};
-
-    int edades[personas]{15,20,30};
-
-    cout << edades[1] << endl;
-    cout << edades[3] << endl;
-
-    // Almacenar el valor en una posicion:
-
-    edades[3] = 40;
-
-    cout << edades[3] << endl;
-
-    // Como cambiar valor de una posicion
-
-    edades[1] = 100;
-
-    cout << edades[1] << endl;
-
-    // Pedir por consola para almacenar el valor en un indice
-
-    cout << "Colocando el valor en la posicion 1: " ;
-    cin >> edades[1];
-
-    cout << edades[1] << endl;
-
-};
-/* -------------------------------Arrays dimensionales --------------------------------------------------/*
-/* 4 filas y 2 columnas*/
-/*Ejemplo:  int mi_matriz[4][2] = {10,20,30,40,50,60,70,80}
-            int mi_matriz[4][2] = {
-                                    {10,20},
-                                    {30,40},
-                                    {50,60},
-                                    {70,90}
-                                   };
-
- */
-void arraysdimensionales(){
-    // Este array dimensional contiene 4 filas con 2 columnas.
-    /*int mi_matriz[4][2] =  {
-                            10,20, // fila 0  -> columna 0  columna 1
-                            30,40, // fila 1 -> columna 0  columna 1
-                            50,60, // fila 2 -> columna 0  columna 1
-                            70,80  }; // fila 3 -> columna 0  columna 1*/
-
-    // Recorrer el array dimensional y agregar valores:
-    
-    // # Agregar valores por cada fila y columna
-    /*
-        int mi_matriz2[4][5] = {
-                                 0,0,0,0,0,
-                                 0,0,0,0,0,
-                                 0,0,0,0,0,
-                                 0,0,0,0,0,
-                                }
-    
-    */
-    int mi_matriz2[4][5];
-    // for : indica que vamos hacer recorridos.
-    // Filas
-    for(int fila=0;fila<4;fila++){
-        // Columnas
-        for(int columna=0;columna<5;columna++){
-            // cin funcion que pide valor en la consola
-            cout << "Ingrese en la fila " << fila + 1 << " en la columna " << columna + 1 << " : ";
-            cin >> mi_matriz2[fila][columna];
-        }
-    };
-    cout << "Visualizamos ahora los valores almacenados en el array" << endl;
-
-    for(int fila = 0; fila < 4; fila++){
-        for(int columna= 0; columna<5; columna++){
-            cout << mi_matriz2[fila][columna];
-        }
-        cout << endl;
-    }
-};
-/*------------------------------------------------------------------- Vectores ------------------------------------------------------*/
-/*
-    ¿ Que es un vector?
-    - Vector es una (CLASE) de la libreria Estandar de C++. Esta clase crea estructuras contenedoras para almacenar datos secuenciales.
-    (Puede varias la capacidad).
-    - Los vectores pueden crecer o decrecer en tamaño de forma dinamica.
-    - Tienen una sintaxis muy similar a los Arrays (pero no son iguales).
-    - Proporcionan multiples metodos para chequear limites , tamaños , comprobar si existe un elemnto , etc .
-    - Almacenan los valores en posiciones contiguas de la memoria y tambien en posiciones separadas accesibles a traves de punteros.
-    // Importancia:
-        - Tamaño dinamico
-        - Los elementos almacenados en su interior son del mismo tipo
-        - Se accede a los elementos almacenados con su posicion o indice
-        - El primer elemento tiene indice 0
-        - El ultimo elemento tiene indice size - 1
-        - Se suele interaccionar con ellos utilizando bucles
-*/
-// Incluyendo la biblioteca vector
-#include <vector>
-
-void vectores(){
-    // Si no se coloca valores determinado sus valores son 0
-    // Vectores libres
-
-    vector <int> numeros;
-    
-    vector <char> letras;
-    // Vectores con caracteres determinados 
-    vector <int> numeros1{10,20,30,40,50};
-    vector <char> letras1(6);
-
-    // Valor que se almacenar por defecto en los valores determinados
-    vector <double> salarios(200,2000);
-
-    // Recorrido con For, para saber que contiene un vector
-
-    // Numero:
-    for(int i = 0; i < 5; i++){
-        
-        cout << numeros1[i] << endl;
-    }
-
-    cout << "==============================================";
-
-    // Char:
-    for(int i = 0; i<6;i++){
-        cout << letras1[i] << endl;
-    }
-
-}
